@@ -9,6 +9,7 @@ r1.question('Por favor, insira seu nome: ', (nome) => {
     r1.question('Por favor, insira sua idade: ', (idade) => {
         r1.question('Por favor, insiria a sua cidade: ', (cidade) => {
             console.log(`Olá ${nome}! Você tem ${idade} anos e mora em ${cidade}.`)
+            r1.close();
         });
     });
 });
