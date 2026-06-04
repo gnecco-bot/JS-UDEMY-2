@@ -11,7 +11,7 @@ rl.question('Digite uma nota de 0 a 100: ', (numero) => {
 
     const categoria = Math.floor(numeroInt / 10);
 
-    switch (numeroInt) {
+    switch (categoria) {
         case 10:
         case 9:
             nota = 'A';
@@ -31,6 +31,7 @@ rl.question('Digite uma nota de 0 a 100: ', (numero) => {
 
         default:
             nota = 'F'
+            break;
     }
     console.log('Sua nota é ' + nota);
     rl.close()
