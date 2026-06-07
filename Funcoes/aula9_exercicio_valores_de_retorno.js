@@ -4,15 +4,6 @@ const anoBissexto = function (ano) {
     } else {
         return `O ano mencionado ${ano} não é bissexto.`
     }
-
-    // if (ano % 4 === 0) {
-    //     if (ano % 100 === 0) {
-    //         return `O ano mencionado ${ano} não é bissexto mesmo sendo divisivel por 4.`
-    //     }
-    //     return `O ano menciona ${ano} é bissexto.`
-    // } else {
-    //     return `O ano mencionado ${ano} não é bissexto.`
-    // }
 }
 
 let ano1 = anoBissexto(12)
