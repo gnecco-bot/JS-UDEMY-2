@@ -45,4 +45,5 @@ const gerenciadorDeTarefas = (function () {
 
 gerenciadorDeTarefas.adicionar("Comprar leite");
 gerenciadorDeTarefas.adicionar("Pagar as contas");
+gerenciadorDeTarefas.adicionar("Aprender HTML");
 gerenciadorDeTarefas.listar();
