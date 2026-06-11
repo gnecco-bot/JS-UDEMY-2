@@ -8,4 +8,4 @@ while (contador <= 100) {
     }
     contador++;
 }
-console.log('contagem finalizada')
+console.log('Contagem finalizada: ' + acumulador)
