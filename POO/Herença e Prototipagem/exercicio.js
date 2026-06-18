@@ -22,7 +22,7 @@ class Aluno extends Pessoa {
 class Professor extends Pessoa {
     constructor(nome, idade, numeroDepartamento) {
         super(nome, idade);
-        this.numeroDepartamento = this.numeroDepartamento;
+        this.numeroDepartamento = numeroDepartamento;
     }
     saudacaoProfessor() {
         console.log(`Professor: ${this.nome}, Número do Departamento: ${this.numeroDepartamento}`);
@@ -33,6 +33,6 @@ const aluno1 = new Aluno('Ana', 10, 211923)
 aluno1.saudacao();
 aluno1.saudacaoAluno();
 
-const professor1 = new Professor('Jonatas', 28, 5)
+const professor1 = new Professor('Jonatas', 28, 'Hitória')
 professor1.saudacao()
 professor1.saudacaoProfessor();
