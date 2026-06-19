@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Atributos colspan e rowspan em Tabelas HTML</h1>
+    <table border="1">
+        <caption>Horário de Aulas</caption>
+        <thead>
+            <tr>
+                <th>Dia</th>
+                <th colspan="3">Manhã</th>
+                <th colspan="3">Tarde</th>
+            </tr>
+            <tr>
+                <th>Horário</th>
+                <th>8h-9h</th>
+                <th>9h-10h</th>
+                <th>10h-11h</th>
+                <th>13h-14h</th>
+                <th>14h-15h</th>
+                <th>15h-16h</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Segunda-Feira</td>
+                <td rowspan="2">Matemática</td>
+                <td rowspan="2">Física</td>
+                <td>Química</td>
+                <td colspan="2">Literatura</td>
+                <td rowspan="3">Artes</td>
+            </tr>
+            <tr>
+                <td>Terça-feira</td>
+                <td>Geografia</td>
+            </tr>
+            <tr>
+                <td>Quarta-feira</td>
+                <td colspan="2">Biologia</td>
+                <td>Português</td>
+                <td>História</td>
+                <td>Educação Física</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
