@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Profissional</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <h1>Agenda de Contatos</h1>
+    <div class="filtro">
+        <input type="text" id="filtro" placeholder="Filtrar contatos" onkeyup="filtrarContatos()">
+    </div>
+
+    <div class="formulario">
+        <input type="text" placeholder="nome" id="nome">
+        <input type="email" placeholder="email" id="email">
+        <input type="text" placeholder="telefone" id="telefone">
+        <button onclick="adicionarContato()">Cadastrar</button>
+    </div>
+
+    <p id="totalContatos" class="total-contatos">
+        Total de Contatos: 0
+    </p>
+    <table id="tabelaContatos">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
