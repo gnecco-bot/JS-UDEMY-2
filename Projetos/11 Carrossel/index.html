@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="carrossel">
+        <div class="imagens-carrossel">
+            <img src="imagens/imagem1.jpg" alt="" class="imagem-ativa" onclick="abrirEmNovaAba('imagens/imagem1.jpg')">
+            <img src="imagens/imagem2.jpg" alt="" class="imagem-ativa" onclick="abrirEmNovaAba('imagens/imagem2.jpg')">
+            <img src="imagens/imagem3.jpg" alt="" class="imagem-ativa" onclick="abrirEmNovaAba('imagens/imagem3.jpg')">
+        </div>
+        <div class="miniaturas">
+            <img src="imagens/imagem1.jpg" alt="" class="imagem-ativa" onclick="selecionarImagem(0)">
+            <img src="imagens/imagem2.jpg" alt="" class="imagem-ativa" onclick="selecionarImagem(1)">
+            <img src="imagens/imagem3.jpg" alt="" class="imagem-ativa" onclick="selecionarImagem(2)">
+        </div>
+        <button class="botao-anterior" onclick="mover(-1)">Anterior</button>
+        <button class="botao-proximo" onclick="mover(1)">Próximo</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
