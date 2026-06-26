@@ -14,8 +14,10 @@
         <div id="login-container">
             <input type="text" name="usuario" id="usuario" placeholder="Usuário">
             <input type="password" name="senha" id="senha" placeholder="Senha">
-            <button onclick="login()">Entrar</button>
-            <button onclick="registrar()">Registrar</button>
+            <div class="botao-login-cadastro-container">
+                <button onclick="login()">Entrar</button>
+                <button onclick="registrar()">Registrar</button>
+            </div>
         </div>
 
         <div id="atm-container" style="display: none;">
@@ -45,7 +47,7 @@
         <div id="historico-container" style="display: none;">
             <h3>Histórico de transações</h3>
             <textarea id="historico-text" rows="10" cols="40" readonly></textarea>
-            <button onclick="exibirCaixaEletronico()">Cancelar</button>
+            <button onclick="exibirCaixaEletronico()">Voltar</button>
         </div>
     </div>
 
