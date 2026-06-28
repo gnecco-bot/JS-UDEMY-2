@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.carrossel-container {
+    position: relative;
+    width: 80%;
+    overflow: hidden;
+}
+
+.carrossel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.nivel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.item img {
+    width: 1900px;
+    height: auto;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+button.anterior {
+    left: 10px;
+}
+
+button.proximo {
+    right: 10px;
+}
