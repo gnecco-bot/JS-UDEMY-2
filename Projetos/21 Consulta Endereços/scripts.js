@@ -1,4 +1,4 @@
-document.getElementById('botao-buscar').addEventListener('click', function () {
+function buscarCEP() {
     var cep = document.getElementById('campo-cep').value.trim();
     if (cep) {
         fetch(`https://viacep.com.br/ws/${cep}/json`)
@@ -20,4 +20,11 @@ document.getElementById('botao-buscar').addEventListener('click', function () {
                 document.getElementById('resultado').innerHTML = '<p>Erro ao bucar o CEP.</p>'
             });
     }
-});
+};
+
+document.getElementById('botao-buscar').addEventListener('click', buscarCEP)
+document.getElementById('campo-cep').addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        buscarCEP();
+    }
+})
