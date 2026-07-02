@@ -25,7 +25,7 @@ function mostrarResultado(dados) {
         <p><strong>CNPJ:</strong> ${dados.cnpj}</p>
         <p><strong>Atividade Principal:</strong> ${dados.cnae_fiscal_descricao}</p>
         <p><strong>Capital Social:</strong> ${dados.capital_social}</p>
-        <p><strong>Endereço:</strong> ${dados.descricao_tipo_logradouro} ${dados.logradouro}, N. ${dados.numero}, ${dados.complemento || ''}, Bairro: ${dados.bairro}, ${dados.municipio}, ${dados.uf}, ${dados.cep}</p>
+        <p><strong>Endereço:</strong> ${dados.descricao_tipo_logradouro} ${dados.logradouro}, Nº ${dados.numero}, ${dados.complemento || ''}, Bairro: ${dados.bairro}, ${dados.municipio} - ${dados.uf}, ${dados.cep}</p>
         <p><strong>Natureza Juridica:</strong> ${dados.natureza_juridica}</p>
         <p><strong>Situação Cadastral:</strong> ${dados.descricao_situacao_cadastral} desde ${dados.data_situacao_cadastral}</p>
         <p><strong>Telefone:</strong> ${dados.ddd_telefone_1 ? `(${dados.ddd_telefone_1})` : ""}</p>
@@ -36,5 +36,55 @@ function mostrarResultado(dados) {
 };
 
 function exportarParaPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    const titulo = "";
+    const subTituloY = 10;
+    let y = 20;
+    doc.setFontSize(16);
+    doc.text(titulo, 10, subTituloY);
+    doc.setFontSize(12);
+    const resultado = document.querySelectorAll('#resultado p, #resultado h2, #resultado ul, #resultado li');
 
+    resultado.forEach((item) => {
+        let linhaAtual = item.tagName === 'UL' ? '' : item.textContent;
+        let splitTexto = doc.splitTextToSize(linhaAtual, 180);
+
+        splitTexto.forEach((linha, i) => {
+            if (y > 280) {
+                doc.addPage();
+                y = 10;
+            }
+
+            if (item.tagName === 'H2' && i === 0) {
+                doc.setFontSize(14);
+                doc.text(linha, 10, y);
+                doc.setFontSize(12);
+            } else if (item.tagName === 'LI') {
+                doc.text(`- ${linha}`, 15, y);
+            } else {
+                doc.text(linha, 10, y);
+            }
+            y += 10;
+        });
+    });
+    doc.save('informacoes-empresa.pdf');
 }
+
+function exportarParaExcel() {
+    const wb = XLSX.utils.book_new();
+    const ws_data = [];
+    const resultado = document.querySelectorAll('#resultado p, #resultado h2, #resultado ul, #resultado li');
+    resultado.forEach((item) => {
+        if (item.tagName === 'LI') {
+            ws_data.push([`- ${item.textContent}`]);
+        } else if (item.tagName !== 'UL') {
+            ws_data.push([item.textContent]);
+
+        }
+    });
+
+    const ws = XLSX.utils.aoa_to_sheet(ws_data);
+    XLSX.utils.book_append_sheet(wb, ws, "Informações");
+    XLSX.writeFile(wb, "informações-empresa.xlsx");
+};
