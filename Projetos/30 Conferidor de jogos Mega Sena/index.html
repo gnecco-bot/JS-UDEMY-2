@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conferidor de jogos Mega Sena</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="mega-sena.jpg" alt="Mega-Sena" class="cabecalho-imagem">
+        </header>
+        <h1>Conferidor de Jogos da Mega Sena</h1>
+        <button id="abrirModalCadastroBtn">Cadastrar Jogo</button>
+        <button id="abrirModelSurpresinhaBtn">Surpresinha Jogo</button>
+        <div id="modalCadastro" class="modal">
+            <div class="modal-conteudo">
+                <span class="fechar">&times;</span>
+            </div>
+            <h2>Cadastrar Jogo</h2>
+            <form id="forumlarioJogo">
+                <label for="quantidadeNumeros">Quantidade de Números</label>
+                <input type="number" id="quantidadeNumeros" min="6" max="20" value="6" required>
+                <div id="numeroCampos">
+
+                </div>
+                <button type="sumbit">Salvar Jogo</button>
+            </form>
+        </div>
+
+        <div id="modalSurpresinha" class="modal">
+            <div class="modal-conteudo">
+                <span class="fechar">&times;</span>
+                <h2>Surpresinha</h2>
+                <label for="quantidadeNumerosSurpresinha">Quantidade de Números:</label>
+                <input type="number" name="" id="quantidadeNumerosSurpresinha" min="6" max="20" value="6" required>
+                <p id="jogoSurpresinha"></p>
+                <button id="salvarSurpresinhaBtn">Salvar Jogo</button>
+            </div>
+        </div>
+
+        <div class="secao-conferir">
+            <label for="confereNum1">Número 1:</label>
+            <input type="number" name="" id="confereNum1" min="1" max="60">
+            <label for="confereNum2">Número 2:</label>
+            <input type="number" name="" id="confereNum2" min="1" max="60">
+            <label for="confereNum3">Número 3:</label>
+            <input type="number" name="" id="confereNum3" min="1" max="60">
+            <label for="confereNum4">Número 4:</label>
+            <input type="number" name="" id="confereNum4" min="1" max="60">
+            <label for="confereNum5">Número 5:</label>
+            <input type="number" name="" id="confereNum5" min="1" max="60">
+            <label for="confereNum6">Número 6:</label>
+            <input type="number" name="" id="confereNum6" min="1" max="60">
+        </div>
+
+        <ul id="listaJogos"></ul>
+    </div>
+
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
