@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Rotativo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="cachorro.jpg" alt="">
+            <h1>Meu Amor Pet</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#parceiros">Parceiros</a></li>
+                <li><a href="#perdidos">Perdidos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="banner-responsivo" id="banner-responsivo">
+        <div class="conteudo-banner" onclick="abrirGoogle()">
+            <h2>Bem-vindo ao Meu Amor Pet</h2>
+            <p>Cuide bem dos seus pets, eles merecem o melhor!</p>
+        </div>
+        <button class="fechar-banner-responsivo" onclick="fecharBannerResponsivo(event)">X</button>
+    </div>
+
+    <div class="container-carousel">
+        <div class="carousel">
+            <div class="carousel-interno">
+                <div class="item-carousel ativo" onclick="abrirLink('Link meu curso de Excel')">
+                    <img src="img1.jpg" alt="">
+                </div>
+                <div class="item-carousel ativo" onclick="abrirLink('Link meu curso de Python')">
+                    <img src="img2.jpg" alt="">
+                </div>
+                <div class="item-carousel ativo" onclick="abrirLink('Link meu curso de Logica de programação')">
+                    <img src="img3.jpg" alt="">
+                </div>
+            </div>
+            <button class="controle-carousel anterior" onclick="slideAnterior()">❮</button>
+            <button class="controle-carousel proximo" onclick="slideProximo()">❯</button>
+            <button class="fechar-carousel" onclick="fecharCarousel()">✖</button>
+        </div>
+    </div>
+    <main class="sobre-pets" id="sobre-pets">
+        <div class="conteudo-principal">
+            <h2>Cuidado dos Nossos amigos peludos nas onda de calor</h2>
+            <p>12 de novembro de 2024</p>
+            <p>o verão é sinonimo de alegria e sol e pino, mas as altas temperaturas trazem desafios especiais apra
+                nossos amigos de quatros patas, sejam ele os bixinhos confortáveis em nossas casas ou aquieles que
+                entretam o calor nas ruas.</p>
+            <h3>Hidratação: Sua e Deles</h3>
+            <p>No calor, a hidratação</p>
+            <img src="dog.jpg" alt="">
+        </div>
+    </main>
+
+    <footer>
+        <p>Entre em contato conosco: <a href="mailto:contato@meuamorpet.com.br">contato@meuamorpet.com.br</a></p>
+    </footer>
+
+    <div class="banner-animado" id="banner-animado" onclick="abrirGoogle()">
+        <img src="animacao.gif" alt="">
+        <button class="fechar-banner-animado" onclick="fecharBannerAnimado(event)">X</button>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
