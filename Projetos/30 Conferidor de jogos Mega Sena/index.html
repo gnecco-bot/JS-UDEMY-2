@@ -15,20 +15,20 @@
         </header>
         <h1>Conferidor de Jogos da Mega Sena</h1>
         <button id="abrirModalCadastroBtn">Cadastrar Jogo</button>
-        <button id="abrirModelSurpresinhaBtn">Surpresinha Jogo</button>
+        <button id="abrirModalSurpresinhaBtn">Surpresinha Jogo</button>
         <div id="modalCadastro" class="modal">
             <div class="modal-conteudo">
                 <span class="fechar">&times;</span>
-            </div>
-            <h2>Cadastrar Jogo</h2>
-            <form id="forumlarioJogo">
-                <label for="quantidadeNumeros">Quantidade de Números</label>
-                <input type="number" id="quantidadeNumeros" min="6" max="20" value="6" required>
-                <div id="numeroCampos">
+                <h2>Cadastrar Jogo</h2>
+                <form id="formularioJogo">
+                    <label for="quantidadeNumeros">Quantidade de Números</label>
+                    <input type="number" id="quantidadeNumeros" min="6" max="20" value="6" required>
+                    <div id="numerosCampos">
 
-                </div>
-                <button type="sumbit">Salvar Jogo</button>
-            </form>
+                    </div>
+                    <button type="sumbit">Salvar Jogo</button>
+                </form>
+            </div>
         </div>
 
         <div id="modalSurpresinha" class="modal">
@@ -55,6 +55,7 @@
             <input type="number" name="" id="confereNum5" min="1" max="60">
             <label for="confereNum6">Número 6:</label>
             <input type="number" name="" id="confereNum6" min="1" max="60">
+            <button id="botaoConferir">Conferir</button>
         </div>
 
         <ul id="listaJogos"></ul>
