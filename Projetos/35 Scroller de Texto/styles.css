@@ -1,0 +1,162 @@
+body {
+    background-color: #fff;
+    color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: #222;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+button {
+    display: block;
+    width: 750px;
+    height: 130px;
+    padding: 15px 30px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+button:hover {
+    background-color: #e0f44b;
+    color: #000;
+}
+
+.scroller-fade {
+    width: 100%;
+    overflow: hidden;
+    height: 300px;
+    position: relative;
+    background-color: #000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+.conteudo-fade {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 100px;
+    color: #fff;
+    padding: 10px 20px;
+    animation: deslizar-fade 10s linear infinite;
+}
+
+@keyframes deslizar-fade {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+.scroller-bounce {
+    width: 100%;
+    overflow: hidden;
+    height: 400px;
+    position: relative;
+    background-color: #000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+.conteudo-bounce {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 100px;
+    color: #fff;
+    padding: 10px 20px;
+    animation: deslizar-bounce 10s ease-in-out infinite;
+}
+
+@keyframes deslizar-bounce {
+    0% {
+        transform: translateX(100%);
+    }
+
+    25% {
+        transform: translateX(75%) translateY(-50px);
+    }
+
+    50% {
+        transform: translateX(50%) translateY(0);
+    }
+
+    75% {
+        transform: translateX(25%) translateY(-50px);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.scroller-zoom {
+    width: 100%;
+    overflow: hidden;
+    height: 800px;
+    position: relative;
+    background-color: #000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+.conteudo-zoom {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 50px;
+    color: #fff;
+    padding: 10px 20px;
+    animation: deslizar-zoom 15s linear infinite;
+}
+
+@keyframes deslizar-zoom {
+    0% {
+        transform: translateX(100%) scale(1);
+    }
+
+    50% {
+        transform: translateX(0%) scale(2);
+    }
+
+    100% {
+        transform: translateX(-100%) scale(1);
+    }
+}
