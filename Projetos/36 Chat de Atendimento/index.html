@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div id="chatbot">
+
+        <div id="chat-header">
+            <span id="chat-title">ChatBot de Atendimento</span>
+            <button id="minimize-button">_</button>
+            <button id="close-button">x</button>
+        </div>
+
+        <div id="chat-intro">
+            <p>Por favor, insira seu nome para começar:</p>
+            <input type="text" name="nome-usuario" id="nome-usuario" placeholder="Digite seu nome...">
+            <button id="iniciar-chat">Iniciar Chat</button>
+        </div>
+
+        <div id="chat-window" style="display: none;">
+            <div id="chat-output"></div>
+            <div id="input-container">
+                <input type="text" name="" id="entrada-usuario" placeholder="Digite sua mensagem...">
+                <button id="botao-enviar">Enviar</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
