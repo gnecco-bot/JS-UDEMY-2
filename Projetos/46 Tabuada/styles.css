@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e0f7fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    background-color: #007bff;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+}
+
+h1,
+h2 {
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.grupo-entrada,
+.grupo-saida {
+    margin-bottom: 15px;
+}
+
+.grupo-entrada label,
+.grupo-saida label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.grupo-entrada select,
+.grupo-entrada input,
+.grupo-saida input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056d3;
+}
+
+#resultado {
+    margin-top: 20px;
+}
+
+#resultado p {
+    margin: 5px 0;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
