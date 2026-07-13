@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assinatura</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="assinatura">
+        <h1>Assinatura Confirmada</h1>
+        <p id="mensagem-plano"></p>
+        <button onclick="window.location.href='index.html'">Voltar para a Tabela de Preços</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search)
+            const plano = params.get('plano');
+            const mensagemPlano = document.getElementById('mensagem-plano')
+            switch (plano) {
+                case "plano-basico":
+                    mensagemPlano.textContent = "Você escolheu o Plano BÁSICO, Aproveite nossos recursos por R$ 10 reais por mês";
+                    break;
+
+                case "plano-premium":
+                    mensagemPlano.textContent = "Você escolheu o Plano PREMIUM, Aproveite nossos recursos por R$ 25 reais por mês";
+                    break;
+
+                case "plano-padrao":
+                    mensagemPlano.textContent = "Você escolheu o Plano PADRÃO, Aproveite nossos recursos por R$ 20 reais por mês";
+                    break;
+
+                default:
+                    break;
+            }
+        })
+    </script>
+</body>
+
+</html>

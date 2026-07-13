@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    margin: 0;
+}
+
+.tabela-precos {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.plano {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 30%;
+    /* padding-bottom: 20px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+.destaque {
+    transform: scale(1.1);
+}
+
+.cabecalho {
+    position: relative;
+    background: linear-gradient(45deg, #007bff, #6610f2);
+    color: #fff;
+    padding: 20px 0;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.destaque .cabecalho {
+    background: linear-gradient(45deg, #1d00ff, #00bfff);
+}
+
+.cabecalho::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 20px 20px 0;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+.cabecalho h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.cabecalho p {
+    margin: 5px 0 0;
+}
+
+.preco {
+    font-size: 40px;
+    margin: 20px 0;
+    color: #333;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 0 20px;
+    flex-grow: 1;
+}
+
+ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.check {
+    color: green;
+    float: right;
+}
+
+.nao {
+    color: red;
+    float: right;
+}
+
+.botao-comprar {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.destaque .botao-comprar {
+    background-color: #1d00ff;
+}
+
+.botao-comprar:hover {
+    opacity: 0.9;
+}
