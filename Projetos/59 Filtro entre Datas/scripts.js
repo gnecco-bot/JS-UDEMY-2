@@ -185,4 +185,19 @@ function gerarTabelaPaginadaComFiltro(dados) {
     renderizarTabela();
 };
 
-function exportarTabela() { }
+function exportarTabela() {
+    if (!tabelaFiltradaGlobal || tabelaFiltradaGlobal.length === 0) return;
+    const dadosExportar = tabelaFiltradaGlobal.map((linha, indiceLinha) => {
+        if (indiceLinha === 0) return linha;
+        return linha.map((celula, indiceColuna) => {
+            if (typeof celula === 'object' && celula !== null && 'y' in celula && 'm' in celula && 'd' in celula) {
+                return new Date(celula.y, celula.m, celula.d).toLocaleDateString('pt-BR');
+            };
+            return celula;
+        });
+    });
+    const wb = XLSX.utils.book_new();
+    const ws = XLSX.utils.aoa_to_sheet(dadosExportar);
+    XLSX.utils.book_append_sheet(wb, ws, 'Tabela Exportada');
+    XLSX.writeFile(wb, 'tabela_exportada.xlsx');
+}
