@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Passar dados entre Listas</h1>
+        <div class="listas">
+            <div class="lista">
+                <h2>Nomes</h2>
+                <select name="" id="listasNomes" multiple size="15"></select>
+            </div>
+            <div class="botoes">
+                <button id="moverParaDados">&gt;</button>
+                <button id="moverParaNomes">&lt;</button>
+                <button id="moverTodosParaDados">&gt;&gt;</button>
+                <button id="moverTodosParaNomes">&lt;&lt;</button>
+            </div>
+            <div class="lista">
+                <h2>Dados</h2>
+                <select name="" id="listaDados" multiple size="15"></select>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
