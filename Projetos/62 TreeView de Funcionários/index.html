@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css" />
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Exercício - TreeView de Funcionários</h1>
+        <div class="conteudo">
+
+            <div id="treeContainer"></div>
+
+            <div class="detalhes">
+                <h2>Cargos</h2>
+                <button id="exportar">Exportar para Excel</button>
+
+                <table id="tabelaCargos">
+                    <thead>
+                        <tr>
+                            <th>Departamento</th>
+                            <th>Cargo</th>
+                            <th>Nome</th>
+                            <th>Salário</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
