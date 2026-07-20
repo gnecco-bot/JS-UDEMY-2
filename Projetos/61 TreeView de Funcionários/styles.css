@@ -7,5 +7,63 @@ body {
     height: 100vh;
     margin: 0;
     padding: 20px;
+}
 
+.container {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.conteudo {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#treeContainer {
+    width: 45%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #fafafa;
+    overflow-y: auto;
+}
+
+.detalhes {
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+.detalhes h2 {
+    margin-top: 0;
+}
+
+.detalhes label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.detalhes input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 16px;
 }
