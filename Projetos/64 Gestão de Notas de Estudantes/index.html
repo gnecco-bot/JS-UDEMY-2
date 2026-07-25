@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="titulo">Gestão de Notas dos Estudantes</h1>
+        <div id="indicador-carregamento" class="carregando">Carregando...</div>
+        <div id="conteudo" style="display: block;">
+            <div class="barra-controle">
+                <input type="text" name="" id="campo-pesquisa" class="campo-pesquisa" placeholder="Pesquisar...">
+                <button id="exportar-filtradas" class="botao-exportar" onclick="exportarNotasFiltradas()">Exportar
+                    Notas</button>
+            </div>
+            <div id="container-abas" class="abas-container">
+                <ul class="abas" id="abasTurmas"></ul>
+                <div class="conteudo-abas" id="conteudAbas"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
