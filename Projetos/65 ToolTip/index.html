@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+</head>
+
+<body>
+    <h1>Dados dos vendedores</h1>
+    <div class="filtros">
+        <input type="text" id="filtro-vendedor" placeholder="Filtrar por vendedor">
+        <input type="text" id="filtro-produto" placeholder="Filtrar por Produto">
+        <input type="text" id="filtro-preco" placeholder="Filtrar por Preço">
+    </div>
+
+    <table id="tabela-vendedores">
+        <thead>
+            <tr>
+                <th>Imagem</th>
+                <th>Vendedor</th>
+                <th>Produto</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <div id="tooltip" class="tooltip"></div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
