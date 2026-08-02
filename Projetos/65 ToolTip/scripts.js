@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             celulaVendedor.textContent = linha.Vendedor;
             const celulaProduto = novaLinha.insertCell();
             celulaProduto.textContent = linha.Produto;
-            const totalFormatado = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(linha.total);
+            const totalFormatado = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(linha.Total);
             const celulaTotal = novaLinha.insertCell();
             celulaTotal.textContent = totalFormatado;
             novaLinha.addEventListener('mouseover', () => {
@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const dadosFiltrados = dadosTabela.filter(linha => {
             const vendedorMatch = linha.Vendedor.toLowerCase().includes(filtroVendedor);
             const produtoMatch = linha.Produto.toLowerCase().includes(filtroProduto);
-            const precoMatch = filtroPreco ? new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(linha.total).includes(filtroPreco) : true;
-            return vendedorMatch && produtoMathc && precoMatch;
+            const precoMatch = filtroPreco ? new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(linha.Total).includes(filtroPreco) : true;
+            return vendedorMatch && produtoMatch && precoMatch;
         });
 
         preencherTabela(dadosFiltrados);
