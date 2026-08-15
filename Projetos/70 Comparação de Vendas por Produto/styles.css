@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #2c3e50;
+    padding: 10px;
+    border-radius: 8px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #ecf0f1;
+    font-size: 24px;
+}
