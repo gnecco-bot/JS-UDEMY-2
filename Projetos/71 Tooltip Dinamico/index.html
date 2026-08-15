@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Exercício - Tooltip Dinãmico</h1>
+    <table id="lista-funcionarios">
+        <tr>
+            <th>Nome</th>
+            <th>Departamento</th>
+            <th>Email</th>
+        </tr>
+
+        <tr data-nome="John Doe" data-departamento="Marketing" data-email="john.doe@exemplo.com">
+            <td>John Doe</td>
+            <td>Marketig</td>
+            <td>john.doe@exemplo.com</td>
+        </tr>
+
+        <tr data-nome="Jane Smith" data-departamento="Vendas" data-email="jane.smith@exemplo.com">
+            <td>Jane Smith</td>
+            <td>Vendas</td>
+            <td>jane.smith@exemplo.com</td>
+        </tr>
+
+    </table>
+
+    <div id="caixa-tooltip" style="display: none;">
+        <p><strong>Nome:</strong> <span id="nome-tooltip"></span></p>
+        <p><strong>Departamento:</strong> <span id="departamento-tooltip"></span></p>
+        <p><strong>Email:</strong> <a href="#" id="email-tooltip"></a></p>
+        <button onclick="enviarEmail()">Enviar Email</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
