@@ -1,6 +1,6 @@
 let tabuleiro = ['', '', '', '', '', '', '', '', ''];
 let jogadorAtual = 'X';
-let logoAtivo = true;
+let jogoAtivo = true;
 let pontuacaoJogador = 0;
 let pontuacaoComputador = 0;
 let pontuacaoEmpate = 0;
@@ -18,17 +18,79 @@ const COMBINACOES_VITORIA = [
 ];
 
 function fazerJogada(indiceCelula) {
-    if (!jogadorAtivo || tabuleiro[indiceCelula] !== '') return;
+    if (!jogoAtivo || tabuleiro[indiceCelula] !== '') return;
     tabuleiro[indiceCelula] = jogadorAtual;
     renderizarTabuleiro();
-    if (verificarVitoria) {
+    if (verificarVitoria()) {
         jogoAtivo = false;
         atualizarPontuacoes(jogadorAtual);
         setTimeout(() => {
-            alert(`${jogadorAtual} venceu`)
+            alert(`${jogadorAtual} venceu!`)
             reiniciarJogo();
         }, 100)
         return;
+    }
+    if (verificarEmpate()) {
+        jogoAtivo = false;
+        atualizarPontuacoes('empate');
+        setTimeout(() => {
+            alert('Empate!');
+            reiniciarJogo();
+        }, 100)
+        return;
+    };
+    jogadorAtual = jogadorAtual === 'X' ? 'O' : 'X';
+    if (jogadorAtual === 'O' && jogoAtivo) {
+        setTimeout(() => {
+            movimentoComputador();
+        }, 500)
+    }
+}
+
+function movimentoComputador() {
+    let melhorPontuacao = -Infinity;
+    let movimento;
+    for (let i = 0; i < tabuleiro.length; i++) {
+        if (tabuleiro[i] === '') {
+            tabuleiro[i] = 'O';
+            let pontuacao = minimax(tabuleiro, 0, false);
+            tabuleiro[i] = '';
+            if (pontuacao > melhorPontuacao) {
+                melhorPontuacao = pontuacao;
+                movimento = i;
+            }
+        }
+    }
+    fazerJogada(movimento)
+};
+
+function minimax(tabuleiro, profundidade, estaMaximixando) {
+    let resultado = verificarVencedor();
+    if (resultado !== null) {
+        return resultado === 'O' ? 10 - profundidade : profundidade - 10;
+    }
+    if (estaMaximixando) {
+        let melhorPontuacao = -Infinity;
+        for (let i = 0; i < tabuleiro.length; i++) {
+            if (tabuleiro[i] === '') {
+                tabuleiro[i] = 'O';
+                let pontuacao = minimax(tabuleiro, profundidade + 1, false);
+                tabuleiro[i] = '';
+                melhorPontuacao = Math.max(pontuacao, melhorPontuacao)
+            }
+        }
+        return melhorPontuacao;
+    } else {
+        let melhorPontuacao = Infinity;
+        for (let i = 0; i < tabuleiro.length; i++) {
+            if (tabuleiro[i] === '') {
+                tabuleiro[i] = 'X';
+                let pontuacao = minimax(tabuleiro, profundidade + 1, true);
+                tabuleiro[i] = '';
+                melhorPontuacao = Math.min(pontuacao, melhorPontuacao);
+            }
+        }
+        return melhorPontuacao
     }
 }
 
@@ -48,11 +110,15 @@ function atualizarPontuacoes(vencedor) {
 function renderizarPontuacoes() {
     document.getElementById('pontuacao-jogador').textContent = pontuacaoJogador;
     document.getElementById('pontuacao-computador').textContent = pontuacaoComputador;
-    document.getElementById('pontuacao-empates').textContent = pontuacaoEmpates;
+    document.getElementById('pontuacao-empates').textContent = pontuacaoEmpate;
 }
 
 function verificarVitoria() {
     return verificarVencedor() !== null;
+}
+
+function verificarEmpate() {
+    return !tabuleiro.includes('');
 }
 
 function verificarVencedor() {
@@ -67,15 +133,15 @@ function verificarVencedor() {
 
 function renderizarTabuleiro() {
     for (let i = 0; i < tabuleiro.length; i++) {
-        const celula = document.getElementsByClassName('celular')[i];
+        const celula = document.getElementsByClassName('celula')[i];
         celula.textContent = tabuleiro[i];
     }
 }
 
 function reiniciarJogo() {
-    let tabuleiro = ['', '', '', '', '', '', '', '', ''];
-    let jogadorAtual = 'X';
-    let logoAtivo = true;
+    tabuleiro = ['', '', '', '', '', '', '', '', ''];
+    jogadorAtual = 'X';
+    jogoAtivo = true;
     renderizarTabuleiro();
 }
 
